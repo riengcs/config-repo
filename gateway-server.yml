@@ -76,6 +76,10 @@ resilience4j:
     instances:
       productCircuitBreaker:
         baseConfig: default
+      orderCircuitBreaker:
+        baseConfig: default
+      notificationCircuitBreaker:
+        baseConfig: default
   timelimiter:
     configs:
       default:
@@ -83,4 +87,8 @@ resilience4j:
         cancelRunningFuture: true
     instances:
       productCircuitBreaker:
+        baseConfig: default
+      orderCircuitBreaker:
+        baseConfig: default
+      notificationCircuitBreaker:
         baseConfig: default
