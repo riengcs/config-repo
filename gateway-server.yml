@@ -20,8 +20,9 @@ spring:
                 - name: RequestRateLimiter
                   args:
                     redis-rate-limiter:
-                      replenishRate: 1
-                      burstCapacity: 2
+                      replenishRate: 10
+                      burstCapacity: 20
+                      requestedTokens: 1
                     key-resolver: "#{@ipKeyResolver}"
 
             - id: order-service
@@ -36,8 +37,9 @@ spring:
                 - name: RequestRateLimiter
                   args:
                     redis-rate-limiter:
-                      replenishRate: 1
-                      burstCapacity: 2
+                      replenishRate: 10
+                      burstCapacity: 20
+                      requestedTokens: 1
                     key-resolver: "#{@ipKeyResolver}"
 
             - id: notification-service
@@ -52,8 +54,9 @@ spring:
                 - name: RequestRateLimiter
                   args:
                     redis-rate-limiter:
-                      replenishRate: 1
-                      burstCapacity: 2
+                      replenishRate: 10
+                      burstCapacity: 20
+                      requestedTokens: 1
                     key-resolver: "#{@ipKeyResolver}"
   data:
     redis:
