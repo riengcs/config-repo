@@ -1,2 +1,6 @@
-app:
-  version: 1.0.0
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+  instance:
+    hostname: ${spring.application.name}
