@@ -58,6 +58,14 @@ spring:
                       burstCapacity: 20
                       requestedTokens: 1
                     key-resolver: "#{@ipKeyResolver}"
+                - name: Retry
+                  args:
+                    retries: 3
+                    method: GET
+                    statuses: BAD_GATEWAY,SERVICE_UNAVAILABLE,GATEWAY_TIMEOUT
+                    backoff:
+                      firstBackoff: 100ms
+                      maxBackoff: 1s
   data:
     redis:
       host: ${REDIS_HOST:localhost}
