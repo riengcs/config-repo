@@ -2,5 +2,3 @@ spring:
   main:
     banner-mode: off
     allow-bean-definition-overriding: true
-  config:
-    import: optional:configserver:http://config-server:8888
