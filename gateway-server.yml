@@ -63,6 +63,7 @@ spring:
       host: ${REDIS_HOST:localhost}
       port: ${REDIS_PORT:6379}
 
+# Refer: io.github.resilience4j.common.circuitbreaker.configuration.CommonCircuitBreakerConfigurationProperties
 resilience4j:
   circuitbreaker:
     instances:
