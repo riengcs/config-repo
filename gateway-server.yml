@@ -61,7 +61,7 @@ spring:
                 - name: Retry
                   args:
                     retries: 3
-                    method: GET
+                    methods: GET
                     statuses: BAD_GATEWAY,SERVICE_UNAVAILABLE,GATEWAY_TIMEOUT
                     backoff:
                       firstBackoff: 100ms
