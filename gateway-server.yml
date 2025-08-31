@@ -66,14 +66,21 @@ spring:
 # Refer: io.github.resilience4j.common.circuitbreaker.configuration.CommonCircuitBreakerConfigurationProperties
 resilience4j:
   circuitbreaker:
-    instances:
-      productCircuitBreaker:
+    configs:
+      default:
         slidingWindowSize: 30
         permittedNumberOfCallsInHalfOpenState: 5
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
         registerHealthIndicator: true
-  timelimiter:
     instances:
       productCircuitBreaker:
+        baseConfig: default
+  timelimiter:
+    configs:
+      default:
         timeoutDuration: 3s
+        cancelRunningFuture: true
+    instances:
+      productCircuitBreaker:
+        baseConfig: default
