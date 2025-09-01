@@ -23,13 +23,24 @@ spring:
 
 resilience4j:
   circuitbreaker:
-    instances:
-      product-service:
+    configs:
+      default:
         slidingWindowSize: 30
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
         registerHealthIndicator: true
         permittedNumberOfCallsInHalfOpenState: 5
+    instances:
+      product-service:
+        baseConfig: default
+  timelimiter:
+    configs:
+      default:
+        timeoutDuration: 3s
+        cancelRunningFuture: true
+    instances:
+      product-service:
+        baseConfig: default
 
 custom:
   message: "Welcome to the Order Service!"
