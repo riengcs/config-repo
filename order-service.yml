@@ -25,9 +25,10 @@ resilience4j:
   circuitbreaker:
     instances:
       product-service:
-        slidingWindowSize: 5
+        slidingWindowSize: 30
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 5
 
 custom:
   message: "Welcome to the Order Service!"

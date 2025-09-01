@@ -77,10 +77,10 @@ resilience4j:
     configs:
       default:
         slidingWindowSize: 30
-        permittedNumberOfCallsInHalfOpenState: 5
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
         registerHealthIndicator: true
+        permittedNumberOfCallsInHalfOpenState: 5
     instances:
       productCircuitBreaker:
         baseConfig: default
