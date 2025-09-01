@@ -2,6 +2,10 @@ spring:
   main:
     banner-mode: off
     allow-bean-definition-overriding: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
   rabbitmq:
     host: localhost
     port: 5672
