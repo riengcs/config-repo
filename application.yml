@@ -14,9 +14,9 @@ spring:
     password: guest
   cloud:
     bus:
-      enabled: false
+      enabled: true
     stream:
-      default-binder: rabbit # Allowed Value: [ rabbit, kafka ]
+      default-binder: kafka # Allowed Value: [ rabbit, kafka ]
       kafka:
         binder:
           brokers: localhost:19092
