@@ -15,6 +15,7 @@ spring:
   cloud:
     bus:
       enabled: true
+      destination: springCloudBus
     stream:
       default-binder: kafka # Allowed Value: [ rabbit, kafka ]
       kafka:
@@ -24,6 +25,9 @@ spring:
       rabbit:
         binder:
           admin-addresses: localhost:5672
+      bindings:
+        springCloudBusInput:
+          group: ${spring.application.name}-${spring.application.instance_id:${random.uuid}}
 
 eureka:
   client:
