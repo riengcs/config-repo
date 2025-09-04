@@ -15,7 +15,7 @@ spring:
     bus:
       enabled: false
     stream:
-      default-binder: rabbit # Allowed Value: [ rabbit, kafka]
+      default-binder: rabbit # Allowed Value: [ rabbit, kafka ]
 
 eureka:
   client:
