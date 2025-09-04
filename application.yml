@@ -15,7 +15,7 @@ spring:
   cloud:
     bus:
       enabled: true
-      destination: springCloudBus
+      destination: cloud-bus
     stream:
       default-binder: kafka # Allowed Value: [ rabbit, kafka ]
       kafka:
