@@ -22,6 +22,8 @@ spring:
       protocol: PLAINTEXT
     admin:
       auto-create: true
+    properties:
+      bootstrap.servers: kafka:9092
   rabbitmq:
     addresses: localhost:5672
     username: guest
