@@ -27,7 +27,7 @@ spring:
           admin-addresses: localhost:5672
       bindings:
         springCloudBusInput:
-          group: ${spring.application.name}-${spring.application.instance_id:${random.uuid}}
+          group: ${spring.cloud.bus.destination}-${spring.application.instance_id:${random.uuid}}
 
 eureka:
   client:
