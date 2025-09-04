@@ -8,12 +8,16 @@ spring:
       port: 6379
   kafka:
     bootstrap-servers: kafka:9092
+    bootstrap.servers: kafka:9092
     streams:
       bootstrap-servers: kafka:9092
+      bootstrap.servers: kafka:9092
     consumer:
       bootstrap-servers: kafka:9092
+      bootstrap.servers: kafka:9092
     producer:
       bootstrap-servers: kafka:9092
+      bootstrap.servers: kafka:9092
     security:
       protocol: PLAINTEXT
     admin:
@@ -29,7 +33,8 @@ spring:
       default-binder: kafka # Allowed Value: [ rabbit, kafka ]
       kafka:
         binder:
-          brokers: localhost:19092
+          brokers: kafka:9092
+          bootstrap-servers: kafka:9092
           auto-create-topics: true
       rabbit:
         binder:
