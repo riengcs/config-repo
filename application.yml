@@ -16,6 +16,13 @@ spring:
       enabled: false
     stream:
       default-binder: rabbit # Allowed Value: [ rabbit, kafka ]
+      kafka:
+        binder:
+          brokers: localhost:19092
+          auto-create-topics: true
+      rabbit:
+        binder:
+          admin-addresses: localhost:5672
 
 eureka:
   client:
