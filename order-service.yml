@@ -13,7 +13,6 @@ spring:
       circuitbreaker:
         enabled: true
     stream:
-      default-binder: rabbit
       bindings:
         order-out-0:
           destination: orders

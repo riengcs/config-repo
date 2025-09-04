@@ -14,6 +14,8 @@ spring:
   cloud:
     bus:
       enabled: false
+    stream:
+      default-binder: rabbit
 
 eureka:
   client:
