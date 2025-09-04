@@ -7,7 +7,7 @@ spring:
       host: localhost
       port: 6379
   kafka:
-    bootstrap-servers: kafka:9092
+    bootstrap-servers: localhost:9092
   rabbitmq:
     addresses: localhost:5672
     username: guest
@@ -19,7 +19,7 @@ spring:
       default-binder: kafka # Allowed Value: [ rabbit, kafka ]
       kafka:
         binder:
-          brokers: kafka:9092
+          brokers: localhost:9092
           auto-create-topics: true
       rabbit:
         binder:
