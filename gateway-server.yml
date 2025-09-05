@@ -13,6 +13,7 @@ spring:
               predicates:
                 - Path=/api/products/**
               filters:
+                - RewritePath=/api/products/(?<version>.*), /${version}
                 - name: CircuitBreaker
                   args:
                     name: productCircuitBreaker
@@ -30,6 +31,7 @@ spring:
               predicates:
                 - Path=/api/orders/**
               filters:
+                - RewritePath=/api/orders/(?<version>.*), /${version}
                 - name: CircuitBreaker
                   args:
                     name: orderCircuitBreaker
@@ -47,6 +49,7 @@ spring:
               predicates:
                 - Path=/api/notifications/**
               filters:
+                - RewritePath=/api/notifications/(?<version>.*), /${version}
                 - name: CircuitBreaker
                   args:
                     name: notificationCircuitBreaker
