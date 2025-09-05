@@ -10,10 +10,10 @@ spring:
     show-sql: true
   cloud:
     function:
-      definition: notification
+      definition: notificationOrderConsumer
     stream:
       bindings:
-        notification-in-0:
+        notificationOrderConsumer-in-0:
           destination: notification-order
           group: notification-service-notification-order
           consumer:
