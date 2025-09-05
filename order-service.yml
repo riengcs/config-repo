@@ -14,8 +14,8 @@ spring:
         enabled: true
     stream:
       bindings:
-        order-out-0:
-          destination: orders
+        notificationOrderSupplier-out-0:
+          destination: notification-order
           producer:
             autoStartup: true
 
