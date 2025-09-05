@@ -16,7 +16,6 @@ spring:
       bindings:
         order-out-0:
           destination: orders
-          content-type: application/json
           producer:
             autoStartup: true
 

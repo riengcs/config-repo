@@ -16,7 +16,6 @@ spring:
         notification-in-0:
           destination: orders
           group: notification-group
-          content-type: application/json
           consumer:
             auto-startup: true
 
