@@ -14,8 +14,8 @@ spring:
     stream:
       bindings:
         notification-in-0:
-          destination: orders
-          group: notification-group
+          destination: notification.order
+          group: notification-service
           consumer:
             auto-startup: true
 
