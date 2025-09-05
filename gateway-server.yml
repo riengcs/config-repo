@@ -14,6 +14,7 @@ spring:
                 - Path=/api/products/**
               filters:
                 - RewritePath=/api/products/(?<version>.*), /${version}
+                #- RewritePath=/api/products/(?<version>[^/]+)(?<remaining>/.*), /${version}${remaining}
                 - name: CircuitBreaker
                   args:
                     name: productCircuitBreaker
@@ -32,6 +33,7 @@ spring:
                 - Path=/api/orders/**
               filters:
                 - RewritePath=/api/orders/(?<version>.*), /${version}
+                #- RewritePath=/api/orders/(?<version>[^/]+)(?<remaining>/.*), /${version}${remaining}
                 - name: CircuitBreaker
                   args:
                     name: orderCircuitBreaker
@@ -50,6 +52,7 @@ spring:
                 - Path=/api/notifications/**
               filters:
                 - RewritePath=/api/notifications/(?<version>.*), /${version}
+                #- RewritePath=/api/notifications/(?<version>[^/]+)(?<remaining>/.*), /${version}${remaining}
                 - name: CircuitBreaker
                   args:
                     name: notificationCircuitBreaker
