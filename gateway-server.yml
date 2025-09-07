@@ -13,7 +13,7 @@ spring:
               predicates:
                 - Path=/api/products/**
               filters:
-                - RewritePath=/api/products/(?<version>.*), /${version}
+                - RewritePath=/api/products/(?<remaining>.*), /${remaining}
                 #- RewritePath=/api/products/(?<version>[^/]+)(?<remaining>/.*), /${version}${remaining}
                 - name: CircuitBreaker
                   args:
@@ -32,7 +32,7 @@ spring:
               predicates:
                 - Path=/api/orders/**
               filters:
-                - RewritePath=/api/orders/(?<version>.*), /${version}
+                - RewritePath=/api/orders/(?<remaining>.*), /${remaining}
                 #- RewritePath=/api/orders/(?<version>[^/]+)(?<remaining>/.*), /${version}${remaining}
                 - name: CircuitBreaker
                   args:
@@ -51,7 +51,7 @@ spring:
               predicates:
                 - Path=/api/notifications/**
               filters:
-                - RewritePath=/api/notifications/(?<version>.*), /${version}
+                - RewritePath=/api/notifications/(?<remaining>.*), /${remaining}
                 #- RewritePath=/api/notifications/(?<version>[^/]+)(?<remaining>/.*), /${version}${remaining}
                 - name: CircuitBreaker
                   args:
