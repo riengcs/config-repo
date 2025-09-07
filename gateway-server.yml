@@ -76,6 +76,28 @@ spring:
                       firstBackoff: 100ms
                       maxBackoff: 1s
 
+            - id: dynamic-services
+              uri: lb://#{service}-service
+              predicates:
+                - Path=/api/{service}/**
+              filters:
+                - name: RewritePath
+                  args:
+                    regexp: "/api/(?<service>[^/]+)(?<remaining>/.*)"
+                    replacement: "/${remaining}"
+                - name: CircuitBreaker
+                  args:
+                    name: defaultCircuitBreaker
+                    fallbackUri: forward:/fallback/default
+                - name: Retry
+                  args:
+                    retries: 3
+                    methods: GET
+                    statuses: BAD_GATEWAY,SERVICE_UNAVAILABLE,GATEWAY_TIMEOUT
+                    backoff:
+                      firstBackoff: 100ms
+                      maxBackoff: 1s
+
 # Refer: io.github.resilience4j.common.circuitbreaker.configuration.CommonCircuitBreakerConfigurationProperties
 resilience4j:
   circuitbreaker:
