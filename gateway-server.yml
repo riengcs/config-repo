@@ -78,7 +78,7 @@ spring:
 
             - id: dynamic-services
               order: 3
-              uri: lb://#{servicePrefix}-service
+              uri: "lb://#{servicePrefix}-service"
               predicates:
                 - Path=/api/{servicePrefix}/**
               filters:
@@ -89,7 +89,7 @@ spring:
                 - name: CircuitBreaker
                   args:
                     name: defaultCircuitBreaker
-                    fallbackUri: forward:/fallback/default
+                    fallbackUri: "forward:/fallback/#{servicePrefix}"
                 - name: RequestRateLimiter
                   args:
                     redis-rate-limiter:
