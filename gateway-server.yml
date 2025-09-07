@@ -77,13 +77,14 @@ spring:
                       maxBackoff: 1s
 
             - id: dynamic-services
-              uri: lb://#{service}-service
+              order: 3
+              uri: lb://#{servicePrefix}-service
               predicates:
-                - Path=/api/{service}/**
+                - Path=/api/{servicePrefix}/**
               filters:
                 - name: RewritePath
                   args:
-                    regexp: "/api/(?<service>[^/]+)(?<remaining>/.*)"
+                    regexp: "/api/(?<servicePrefix>[^/]+)(?<remaining>/.*)"
                     replacement: "/${remaining}"
                 - name: CircuitBreaker
                   args:
