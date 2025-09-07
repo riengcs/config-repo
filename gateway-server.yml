@@ -12,10 +12,10 @@ spring:
               order: 0
               uri: lb://product-service
               predicates:
-                - Path=/api/products/**
+                - Path=/api/product/**
               filters:
-                - RewritePath=/api/products/(?<remaining>.*), /${remaining}
-                #- RewritePath=/api/products/(?<version>[^/]+)(?<remaining>/.*), /${version}${remaining}
+                - RewritePath=/api/product/(?<remaining>.*), /${remaining}
+                #- RewritePath=/api/product/(?<version>[^/]+)(?<remaining>/.*), /${version}${remaining}
                 - name: CircuitBreaker
                   args:
                     name: productCircuitBreaker
@@ -32,10 +32,10 @@ spring:
               order: 1
               uri: lb://order-service
               predicates:
-                - Path=/api/orders/**
+                - Path=/api/order/**
               filters:
-                - RewritePath=/api/orders/(?<remaining>.*), /${remaining}
-                #- RewritePath=/api/orders/(?<version>[^/]+)(?<remaining>/.*), /${version}${remaining}
+                - RewritePath=/api/order/(?<remaining>.*), /${remaining}
+                #- RewritePath=/api/order/(?<version>[^/]+)(?<remaining>/.*), /${version}${remaining}
                 - name: CircuitBreaker
                   args:
                     name: orderCircuitBreaker
@@ -52,10 +52,10 @@ spring:
               order: 2
               uri: lb://notification-service
               predicates:
-                - Path=/api/notifications/**
+                - Path=/api/notification/**
               filters:
-                - RewritePath=/api/notifications/(?<remaining>.*), /${remaining}
-                #- RewritePath=/api/notifications/(?<version>[^/]+)(?<remaining>/.*), /${version}${remaining}
+                - RewritePath=/api/notification/(?<remaining>.*), /${remaining}
+                #- RewritePath=/api/notification/(?<version>[^/]+)(?<remaining>/.*), /${version}${remaining}
                 - name: CircuitBreaker
                   args:
                     name: notificationCircuitBreaker
