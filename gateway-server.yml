@@ -1,3 +1,15 @@
+gateway:
+  ignoredPatterns:
+    - /api/*/service-api/**
+    - /api/*//service-api/**
+    - /api/*/integration-api/**
+    - /api/*//integration-api/**
+    - /api/provisioning/import/batch/**
+  csrf:
+    enabled: true
+    ignoredPaths:
+      - /api/auth/login*/**
+      - /api/auth/logout*/**
 spring:
   cloud:
     gateway:
