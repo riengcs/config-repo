@@ -91,13 +91,14 @@ spring:
                       firstBackoff: 100ms
                       maxBackoff: 1s
 
-            - id: dynamic-services
+            - id: dynamic-service-routing
               order: 3
               enabled: true
               uri: "lb://#{servicePrefix}-service"
               predicates:
                 - Path=/api/{servicePrefix}/**
               filters:
+                - DynamicRouting
                 - name: RewritePath
                   args:
                     regexp: "/api/(?<servicePrefix>[^/]+)(?<remaining>/.*)"
