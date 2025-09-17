@@ -98,7 +98,7 @@ spring:
               predicates:
                 - Path=/api/{servicePrefix}/**
               filters:
-                - DynamicRouting
+                - name: DynamicRouting
                 - name: RewritePath
                   args:
                     regexp: "/api/(?<servicePrefix>[^/]+)(?<remaining>/.*)"
