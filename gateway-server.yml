@@ -21,6 +21,7 @@ spring:
               lower-case-service-id: true
           default-filters:
             - ValidateRoutes
+            - DynamicRouting
           routes:
             - id: product-service
               order: 0
