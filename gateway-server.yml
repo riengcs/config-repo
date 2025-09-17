@@ -24,6 +24,7 @@ spring:
           routes:
             - id: product-service
               order: 0
+              enabled: true
               uri: lb://product-service
               predicates:
                 - Path=/api/product/**
@@ -43,6 +44,7 @@ spring:
 
             - id: order-service
               order: 1
+              enabled: true
               uri: lb://order-service
               predicates:
                 - Path=/api/order/**
