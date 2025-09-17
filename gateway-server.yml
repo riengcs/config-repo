@@ -94,7 +94,7 @@ spring:
             - id: dynamic-services
               order: 3
               enabled: true
-              uri: "lb://#{servicePrefix}-service"
+              uri: lb://notification-service
               predicates:
                 - Path=/api/{servicePrefix}/**
               filters:
