@@ -96,9 +96,9 @@ spring:
               enabled: true
               uri: "lb://#{servicePrefix}-service" # Dummy, replaced dynamically in DynamicRouting
               predicates:
-                - Path=/api/**
+                - Path=/api/{servicePrefix}/**
               filters:
-                - name: DynamicRouting
+                - DynamicRouting
                 - name: RewritePath
                   args:
                     regexp: "/api/(?<servicePrefix>[^/]+)(?<remaining>/.*)"
