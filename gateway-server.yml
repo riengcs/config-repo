@@ -106,7 +106,7 @@ spring:
                 - name: CircuitBreaker
                   args:
                     name: defaultCircuitBreaker
-                    fallbackUri: "forward:/fallback/#{servicePrefix}"
+                    fallbackUri: forward:/fallback/default
                 - name: RequestRateLimiter
                   args:
                     redis-rate-limiter:
