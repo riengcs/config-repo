@@ -100,7 +100,7 @@ spring:
                 - name: DynamicRouting
                   args:
                     regexp: "/api/(?<servicePrefix>[^/]+)(?<remaining>/.*)"
-                    replacement: "/${remaining}"
+                    replacement: "${remaining}"
                 - name: CircuitBreaker
                   args:
                     name: defaultCircuitBreaker
