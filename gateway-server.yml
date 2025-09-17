@@ -94,7 +94,7 @@ spring:
             - id: dynamic-service-routing
               order: 3
               enabled: true
-              uri: no://op
+              uri: lb://dummy
               predicates:
                 - Path=/api/{servicePrefix}/**
               filters:
