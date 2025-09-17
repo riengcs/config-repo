@@ -63,3 +63,4 @@ management:
 logging:
   level:
     root: info
+    org.springframework.cloud.gateway.filter.ReactiveLoadBalancerClientFilter: trace
