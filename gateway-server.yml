@@ -93,7 +93,7 @@ spring:
 
             - id: dynamic-services
               order: 3
-              enabled: false
+              enabled: true
               uri: "lb://#{servicePrefix}-service"
               predicates:
                 - Path=/api/{servicePrefix}/**
