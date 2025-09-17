@@ -94,7 +94,7 @@ spring:
             - id: dynamic-service-routing
               order: 3
               enabled: true
-              uri: "lb://#{servicePrefix}-service"
+              uri: "lb://#{servicePrefix}-service" # Dummy, replaced dynamically in DynamicRouting
               predicates:
                 - Path=/api/{servicePrefix}/**
               filters:
