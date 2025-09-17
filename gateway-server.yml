@@ -36,10 +36,9 @@ spring:
                     fallbackUri: forward:/fallback/product
                 - name: RequestRateLimiter
                   args:
-                    redis-rate-limiter:
-                      replenishRate: 10
-                      burstCapacity: 20
-                      requestedTokens: 1
+                    redis-rate-limiter.replenishRate: 10
+                    redis-rate-limiter.burstCapacity: 20
+                    redis-rate-limiter.requestedTokens: 1
                     key-resolver: "#{@ipKeyResolver}"
 
             - id: order-service
@@ -56,10 +55,9 @@ spring:
                     fallbackUri: forward:/fallback/order
                 - name: RequestRateLimiter
                   args:
-                    redis-rate-limiter:
-                      replenishRate: 10
-                      burstCapacity: 20
-                      requestedTokens: 1
+                    redis-rate-limiter.replenishRate: 10
+                    redis-rate-limiter.burstCapacity: 20
+                    redis-rate-limiter.requestedTokens: 1
                     key-resolver: "#{@ipKeyResolver}"
 
             - id: notification-service
@@ -77,10 +75,9 @@ spring:
                     fallbackUri: forward:/fallback/notification
                 - name: RequestRateLimiter
                   args:
-                    redis-rate-limiter:
-                      replenishRate: 10
-                      burstCapacity: 20
-                      requestedTokens: 1
+                    redis-rate-limiter.replenishRate: 10
+                    redis-rate-limiter.burstCapacity: 20
+                    redis-rate-limiter.requestedTokens: 1
                     key-resolver: "#{@ipKeyResolver}"
                 - name: Retry
                   args:
@@ -109,10 +106,9 @@ spring:
                     fallbackUri: forward:/fallback/default
                 - name: RequestRateLimiter
                   args:
-                    redis-rate-limiter:
-                      replenishRate: 10
-                      burstCapacity: 20
-                      requestedTokens: 1
+                    redis-rate-limiter.replenishRate: 10
+                    redis-rate-limiter.burstCapacity: 20
+                    redis-rate-limiter.requestedTokens: 1
                     key-resolver: "#{@ipKeyResolver}"
                 - name: Retry
                   args:
