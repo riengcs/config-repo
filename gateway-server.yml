@@ -21,7 +21,6 @@ spring:
               lower-case-service-id: true
           default-filters:
             - ValidateRoutes
-            - DynamicRouting
           routes:
             - id: product-service
               order: 0
@@ -97,7 +96,7 @@ spring:
               enabled: true
               uri: "lb://#{servicePrefix}-service" # Dummy, replaced dynamically in DynamicRouting
               predicates:
-                - Path=/api/{servicePrefix}/**
+                - Path=/api/**
               filters:
                 - name: DynamicRouting
                 - name: RewritePath
