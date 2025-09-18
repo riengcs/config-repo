@@ -12,6 +12,8 @@ gateway:
 
 spring:
   cloud:
+    loadbalancer:
+      configurations: default
     discovery:
       reactive:
         enabled: true
