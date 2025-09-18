@@ -62,5 +62,5 @@ management:
 ###---------------------------------------###
 logging:
   level:
-    root: info
-    org.springframework.cloud.gateway.filter.ReactiveLoadBalancerClientFilter: trace
+    root: debug
+    com.micro: debug

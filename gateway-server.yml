@@ -153,3 +153,12 @@ resilience4j:
         baseConfig: default
       defaultCircuitBreaker:
         baseConfig: default
+
+###---------------------------------------###
+### Logging Configuration:
+###---------------------------------------###
+logging:
+  level:
+    root: debug
+    com.micro: debug
+    org.springframework.cloud.gateway.filter.ReactiveLoadBalancerClientFilter: trace
