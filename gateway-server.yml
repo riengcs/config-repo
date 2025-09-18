@@ -15,6 +15,16 @@ spring:
     discovery:
       reactive:
         enabled: true
+      client:
+        simple:
+          instances:
+            another-service:
+              - instanceId: another-service-1
+                host: localhost
+                port: 8081
+              - instanceId: another-service-2
+                host: localhost
+                port: 8082
     gateway:
       server:
         webflux:
