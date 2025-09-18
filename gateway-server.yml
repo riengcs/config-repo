@@ -159,6 +159,6 @@ resilience4j:
 ###---------------------------------------###
 logging:
   level:
-    root: debug
+    root: info
     com.micro: debug
     org.springframework.cloud.gateway.filter.ReactiveLoadBalancerClientFilter: trace
