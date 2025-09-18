@@ -12,6 +12,9 @@ gateway:
 
 spring:
   cloud:
+    discovery:
+      reactive:
+        enabled: true
     gateway:
       server:
         webflux:
