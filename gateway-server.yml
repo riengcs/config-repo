@@ -13,7 +13,7 @@ gateway:
 spring:
   cloud:
     loadbalancer:
-      configurations: default
+      configurations: default # Refer: org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientConfiguration
     discovery:
       reactive:
         enabled: true
