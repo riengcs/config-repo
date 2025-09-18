@@ -18,11 +18,11 @@ spring:
       client:
         simple:
           instances:
-            another-service:
-              - instanceId: another-service-1
+            other-service:
+              - instanceId: other-service-1
                 host: localhost
                 port: 8081
-              - instanceId: another-service-2
+              - instanceId: other-service-2
                 host: localhost
                 port: 8082
     gateway:
