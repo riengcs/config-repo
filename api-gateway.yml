@@ -106,7 +106,7 @@ spring:
                       firstBackoff: 100ms
                       maxBackoff: 1s
 
-            - id: dynamic-routing
+            - id: dynamic-routing-service
               order: 3
               enabled: true
               uri: lb://dummy # Dummy, replaced dynamically in DynamicRouting
