@@ -37,6 +37,7 @@ spring:
               lower-case-service-id: true
           default-filters:
             - ValidateRoutes
+            - TokenConversion
           routes:
             - id: product-service
               order: 0
