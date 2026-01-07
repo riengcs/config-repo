@@ -120,7 +120,7 @@ spring:
                 - name: CircuitBreaker
                   args:
                     name: dynamicRoutingCircuitBreaker
-                    fallbackUri: forward:/fallback/default
+                    fallbackUri: forward:/fallback/dynamic-routing
                 - name: RequestRateLimiter
                   args:
                     redis-rate-limiter.replenishRate: 10
