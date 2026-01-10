@@ -19,5 +19,6 @@ spring:
           consumer:
             auto-startup: true
 
-custom:
-  message: "Welcome to the Notification Service!"
+app:
+  info:
+    name: ${spring.application.name}

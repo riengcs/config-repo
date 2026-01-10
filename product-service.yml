@@ -14,5 +14,6 @@ spring:
       mode: always
       data-locations: classpath:data.sql
 
-custom:
-  message: "Welcome to the Product Service!"
+app:
+  info:
+    name: ${spring.application.name}

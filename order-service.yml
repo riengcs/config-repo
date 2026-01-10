@@ -40,5 +40,6 @@ resilience4j:
       product-service:
         baseConfig: default
 
-custom:
-  message: "Welcome to the Order Service!"
+app:
+  info:
+    name: ${spring.application.name}
