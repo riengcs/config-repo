@@ -48,16 +48,16 @@ spring:
               filters:
                 - RewritePath=/api/product/(?<remaining>.*), /${remaining}
                 #- RewritePath=/api/product/(?<version>[^/]+)(?<remaining>/.*), /${version}${remaining}
-                - name: CircuitBreaker
-                  args:
-                    name: productCircuitBreaker
-                    fallbackUri: forward:/fallback/product
-                - name: RequestRateLimiter
-                  args:
-                    redis-rate-limiter.replenishRate: 10
-                    redis-rate-limiter.burstCapacity: 20
-                    redis-rate-limiter.requestedTokens: 1
-                    key-resolver: "#{@ipKeyResolver}"
+#                - name: CircuitBreaker
+#                  args:
+#                    name: productCircuitBreaker
+#                    fallbackUri: forward:/fallback/product
+#                - name: RequestRateLimiter
+#                  args:
+#                    redis-rate-limiter.replenishRate: 10
+#                    redis-rate-limiter.burstCapacity: 20
+#                    redis-rate-limiter.requestedTokens: 1
+#                    key-resolver: "#{@ipKeyResolver}"
 
             - id: order-service
               order: 1
