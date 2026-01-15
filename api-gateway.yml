@@ -42,7 +42,7 @@ spring:
             - id: product-service
               order: 0
               enabled: true
-              uri: lb://PRODUCT-SERVICE
+              uri: lb://product-service
               predicates:
                 - Path=/api/product/**
               filters:
