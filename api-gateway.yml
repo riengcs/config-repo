@@ -107,35 +107,35 @@ spring:
                       firstBackoff: 100ms
                       maxBackoff: 1s
 
-            - id: dynamic-routing
-              order: 3
-              enabled: true
-              uri: lb://dummy # Dummy, replaced dynamically in DynamicRouting
-              predicates:
-                - Path=/api/{servicePrefix}/**
-              filters:
-                - name: DynamicRouting
-                  args:
-                    regexp: "/api/(?<servicePrefix>[^/]+)(?<remaining>/.*)"
-                    replacement: "${remaining}"
-                - name: CircuitBreaker
-                  args:
-                    name: dynamicRoutingCircuitBreaker
-                    fallbackUri: forward:/fallback/dynamic-routing
-                - name: RequestRateLimiter
-                  args:
-                    redis-rate-limiter.replenishRate: 10
-                    redis-rate-limiter.burstCapacity: 20
-                    redis-rate-limiter.requestedTokens: 1
-                    key-resolver: "#{@ipKeyResolver}"
-                - name: Retry
-                  args:
-                    retries: 3
-                    methods: GET
-                    statuses: BAD_GATEWAY,SERVICE_UNAVAILABLE,GATEWAY_TIMEOUT
-                    backoff:
-                      firstBackoff: 100ms
-                      maxBackoff: 1s
+#            - id: dynamic-routing
+#              order: 3
+#              enabled: true
+#              uri: lb://dummy # Dummy, replaced dynamically in DynamicRouting
+#              predicates:
+#                - Path=/api/{servicePrefix}/**
+#              filters:
+#                - name: DynamicRouting
+#                  args:
+#                    regexp: "/api/(?<servicePrefix>[^/]+)(?<remaining>/.*)"
+#                    replacement: "${remaining}"
+#                - name: CircuitBreaker
+#                  args:
+#                    name: dynamicRoutingCircuitBreaker
+#                    fallbackUri: forward:/fallback/dynamic-routing
+#                - name: RequestRateLimiter
+#                  args:
+#                    redis-rate-limiter.replenishRate: 10
+#                    redis-rate-limiter.burstCapacity: 20
+#                    redis-rate-limiter.requestedTokens: 1
+#                    key-resolver: "#{@ipKeyResolver}"
+#                - name: Retry
+#                  args:
+#                    retries: 3
+#                    methods: GET
+#                    statuses: BAD_GATEWAY,SERVICE_UNAVAILABLE,GATEWAY_TIMEOUT
+#                    backoff:
+#                      firstBackoff: 100ms
+#                      maxBackoff: 1s
 
 # Refer: io.github.resilience4j.common.circuitbreaker.configuration.CommonCircuitBreakerConfigurationProperties
 resilience4j:
