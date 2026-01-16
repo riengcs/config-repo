@@ -13,7 +13,7 @@ gateway:
 spring:
   cloud:
     loadbalancer:
-      algorithm: RoundRobin
+      #algorithm: RoundRobin
       configurations: default # Refer: org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientConfiguration
     discovery:
       reactive:
