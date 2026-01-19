@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:identity
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+app:
+  info:
+    name: ${spring.application.name}
