@@ -20,7 +20,7 @@ spring:
 app:
   info:
     name: ${spring.application.name}
-  jobs:
+  scheduler:
     job-common:
       name: JOB_COMMON
       #cron: "*/10 * * * * *"
