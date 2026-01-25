@@ -1,3 +1,6 @@
+shedlock:
+  defaultLockAtLeastFor: PT1S
+  defaultLockAtMostFor: PT60M
 spring:
   datasource:
     db-type: h2 # Allowed Value: [ h2, mysql, oracle, postgresql ]
