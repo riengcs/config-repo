@@ -11,7 +11,7 @@ spring:
     password:
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none # Allowed Value: [none,create,update,validate,drop,...]
     show-sql: true
   liquibase:
     enabled: true
