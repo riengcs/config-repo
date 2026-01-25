@@ -24,4 +24,4 @@ app:
     job-common:
       name: JOB_COMMON
       #cron: "*/10 * * * * *"
-      cron: "-"
+      cron: "-" # Disabled
