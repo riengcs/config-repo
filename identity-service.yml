@@ -1,5 +1,6 @@
 spring:
   datasource:
+    db-type: h2 # Allowed Value: [ h2, mysql, postgresql ]
     url: jdbc:h2:mem:identity
     driverClassName: org.h2.Driver
     username: sa
@@ -8,6 +9,9 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/${spring.datasource.db-type}/master.yaml
 
 app:
   info:
