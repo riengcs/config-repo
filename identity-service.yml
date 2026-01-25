@@ -1,6 +1,6 @@
 spring:
   datasource:
-    db-type: h2 # Allowed Value: [ h2, mysql, postgresql ]
+    db-type: h2 # Allowed Value: [ h2, mysql, oracle, postgresql ]
     url: jdbc:h2:mem:identity
     driverClassName: org.h2.Driver
     username: sa
