@@ -1,7 +1,16 @@
+server:
+  shutdown: graceful
+
 spring:
   main:
     banner-mode: off
     allow-bean-definition-overriding: true
+  messages:
+    basename: config/i18n/messages
+    fallback-to-system-locale: true
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: false
   data:
     redis:
       host: localhost
