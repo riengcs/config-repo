@@ -4,7 +4,8 @@ shedlock:
 spring:
   datasource:
     db-type: h2 # Allowed Value: [ h2, mysql, oracle, postgresql ]
-    url: jdbc:h2:mem:identity
+    #url: jdbc:h2:mem:identity
+    url: jdbc:h2:file:./target/identity;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     driverClassName: org.h2.Driver
     username: sa
     password:
