@@ -16,6 +16,9 @@ spring:
   liquibase:
     enabled: true
     change-log: classpath:/db/changelog/${spring.datasource.db-type}/master.yaml
+  security:
+    ott:
+      expiresIn: PT10M
 
 app:
   info:
