@@ -19,3 +19,8 @@ spring:
 app:
   info:
     name: ${spring.application.name}
+  jobs:
+    job-common:
+      name: JOB_COMMON
+      #cron: "*/10 * * * * *"
+      cron: "-"
