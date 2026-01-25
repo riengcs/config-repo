@@ -2,6 +2,9 @@ server:
   shutdown: graceful
 
 spring:
+  threads:
+    virtual:
+      enabled: false
   main:
     banner-mode: off
     allow-bean-definition-overriding: true
