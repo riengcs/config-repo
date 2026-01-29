@@ -1,6 +1,7 @@
 shedlock:
   defaultLockAtLeastFor: PT1S
   defaultLockAtMostFor: PT60M
+
 spring:
   datasource:
     db-type: h2 # Allowed Value: [ h2, mysql, oracle, postgresql ]
@@ -19,6 +20,15 @@ spring:
   security:
     ott:
       expiresIn: PT10M
+    oauth2:
+      authorizationserver:
+        jwk:
+          rotation:
+            activeKeyId: rsa-2026-06
+          keyStore:
+            keyStore: classpath:keystore.p12
+            keyStorePass: changeit
+            keyStoreType: PKCS12
 
 app:
   info:
